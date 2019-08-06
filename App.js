@@ -1,8 +1,7 @@
 import React, { useRef, useCallback } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 import Signature from "./Signature";
-import { TouchableNativeFeedback } from "react-native-gesture-handler";
 
 export default () => {
   const signatureRef = useRef(null);
@@ -33,18 +32,18 @@ export default () => {
           onReady={() => console.log("ready")}
         />
       </View>
-      <TouchableNativeFeedback onPress={clear}>
+      <TouchableOpacity onPress={clear}>
         <Text>Clear</Text>
-      </TouchableNativeFeedback>
-      <TouchableNativeFeedback onPress={undo}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={undo}>
         <Text>Undo</Text>
-      </TouchableNativeFeedback>
-      <TouchableNativeFeedback onPress={redraw}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={redraw}>
         <Text>Redraw last segment</Text>
-      </TouchableNativeFeedback>
-      <TouchableNativeFeedback onPress={redrawAll}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={redrawAll}>
         <Text>Redraw all</Text>
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
     </View>
   );
 };
